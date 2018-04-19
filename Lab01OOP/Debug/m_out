@@ -1,0 +1,42 @@
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>crypt.exe
+Parameters not set correctly!
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>flipbyte.exe crypt in.txt out.txt 
+There are not enough arguments.
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>flipbyte.exe crypt in.txt out.txt ef 
+There are not enough arguments.
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>flipbyte.exe cry in.txt out.txt 53 
+There are not enough arguments.
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>flipbyte.exe crypt in.txt out.txt 12  1>output.txt 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>FC output.txt cryptText.txt 
+‘à ¢­¥­¨¥ ä ©«®¢ output.txt ¨ CRYPTTEXT.TXT
+***** output.txt
+There are not enough arguments.
+***** CRYPTTEXT.TXT
+Ãüäîéþ ,àéáó,ëîìþð,éîãìþäå
+Éîãìþäå,Éîãìþðéîäû,Æâçâîüìþ
+Ñþâ,ýéæüéþ
+*****
+
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>IF NOT ERRORLEVEL 1 GOTO err 
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>ECHO Program testing succeeded :-) 
+Program testing succeeded :-)
+
+C:\Users\fedor\source\repos\Lab01OOP\Debug>EXIT
