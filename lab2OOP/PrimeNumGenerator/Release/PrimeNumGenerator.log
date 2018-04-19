@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  Generator.cpp
+Generator.cpp(7): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+Generator.cpp(12): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+Generator.cpp(16): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+  PrimeNumGenerator.cpp
+  Создание кода
+  All 228 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  PrimeNumGenerator.vcxproj -> C:\Users\fedor\source\repos\lab2OOP\Release\PrimeNumGenerator.exe

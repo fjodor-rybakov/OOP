@@ -1,0 +1,20 @@
+The red squre
+Красная площадь
+bed
+кровать
+car
+машина
+cat
+кот, кошка
+cup
+чашка
+dog
+собака
+line
+линия
+name
+имя
+word
+слово
+world
+мир

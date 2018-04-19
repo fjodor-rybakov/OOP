@@ -1,0 +1,5 @@
+﻿  PrimeNumGenerator.cpp
+c:\users\fedor\source\repos\lab2oop\primenumgenerator\primenumgenerator.cpp(21): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+c:\users\fedor\source\repos\lab2oop\primenumgenerator\primenumgenerator.cpp(26): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+c:\users\fedor\source\repos\lab2oop\primenumgenerator\primenumgenerator.cpp(30): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+  PrimeNumGenerator.vcxproj -> C:\Users\fedor\source\repos\lab2OOP\Debug\PrimeNumGenerator.exe
