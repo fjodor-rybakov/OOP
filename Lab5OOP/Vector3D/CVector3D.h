@@ -1,4 +1,6 @@
 #pragma once
+#include "iostream"
+#include "fstream"
 
 class CVector3D
 {
@@ -59,6 +61,18 @@ public:
 
 	// Перегрузка оператора !=
 	bool operator!=(CVector3D const& other) const;
+
+	// Перегрузка оператора <<
+	friend std::ostream& operator<<(std::ostream & veiw, const CVector3D & vector);
+
+	// Перегрузка оператора >>
+	friend std::istream& operator>>(std::istream & veiw, CVector3D & vector);
+
+	// Вычисляет результат скалярного произведения двух трехмерных векторов
+	static double DotProduct(CVector3D const& v1, CVector3D const& v2);
+	
+	// Вычисляет результат векторного произведения двух трехмерных векторов
+	static CVector3D CrossProduct(CVector3D const& v1, CVector3D const& v2);
 
 	// В данном случае данные можно сделать публичными
 	double x, y, z;

@@ -116,3 +116,31 @@ bool CVector3D::operator!=(CVector3D const& other) const
 {
 	return !(*this == other);
 }
+
+std::ostream& operator<<(std::ostream & veiw, const CVector3D & vector)
+{
+	veiw << "[ " << vector.x << ", " << vector.y << ", " << vector.z << " ]";
+	return veiw;
+}
+
+std::istream& operator>>(std::istream & veiw, CVector3D & vector)
+{
+	std::cout << "Please enter Vector3D.\nx: ";
+	std::cin >> vector.x;
+	std::cout << "y: ";
+	std::cin >> vector.y;
+	std::cout << "z: ";
+	std::cin >> vector.z;
+
+	return veiw;
+}
+
+double CVector3D::DotProduct(CVector3D const& v1, CVector3D const& v2)
+{
+	return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z);
+}
+
+CVector3D CVector3D::CrossProduct(CVector3D const& v1, CVector3D const& v2)
+{
+	return CVector3D(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.z);
+}
