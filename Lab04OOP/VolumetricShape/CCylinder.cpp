@@ -35,7 +35,7 @@ double CCylinder::GetHeight() const
 
 void CCylinder::GetInfo() const
 {
-	std::cout << CBody::ToString() << std::endl;
+	std::cout << ToString() << std::endl;
 	std::cout << "BaseRadius: " << GetBaseRadius() << std::endl;
 	std::cout << "Height: " << GetHeight() << std::endl;
 	std::cout << std::endl;

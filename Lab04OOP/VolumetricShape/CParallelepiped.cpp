@@ -41,7 +41,7 @@ double CParallelepiped::GetDepth() const
 
 void CParallelepiped::GetInfo() const
 {
-	std::cout << CBody::ToString() << std::endl;
+	std::cout << ToString() << std::endl;
 	std::cout << "Width: " << GetWidth() << std::endl;
 	std::cout << "Height: " << GetHeight() << std::endl;
 	std::cout << "Depth: " << GetDepth() << std::endl;

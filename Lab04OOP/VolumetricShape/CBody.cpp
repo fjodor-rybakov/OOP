@@ -3,7 +3,14 @@
 
 using namespace std;
 
-CBody::CBody(const string &type, double density) : m_density(density), m_type(type)
+CBody::CBody(const std::string& type)
+	: m_type(type)
+{
+}
+
+CBody::CBody(const string &type, double density) :
+	m_density(density),
+	m_type(type)
 {
 }
 
@@ -14,7 +21,7 @@ double CBody::GetDensity() const
 
 double CBody::GetVolume() const
 {
-	return 0;
+	return m_volume;
 }
 
 double CBody::GetMass() const
@@ -29,4 +36,9 @@ std::string CBody::ToString() const
 		"Volume: " + to_string(GetVolume()) + "\n" +
 		"Mass: " + to_string(GetMass());
 	return resilt_str;
+}
+
+std::string CBody::GetType() const
+{
+	return m_type;
 }

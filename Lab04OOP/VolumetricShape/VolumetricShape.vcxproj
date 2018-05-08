@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BodyController.h" />
     <ClInclude Include="CBody.h" />
     <ClInclude Include="CCompound.h" />
     <ClInclude Include="CCone.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BodyController.cpp" />
     <ClCompile Include="CBody.cpp" />
     <ClCompile Include="CCompound.cpp" />
     <ClCompile Include="CCone.cpp" />

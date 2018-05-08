@@ -12,5 +12,5 @@ public:
 	double GetHeight() const;
 	void GetInfo() const;
 private:
-	double m_baseRadius = 0, m_height = 0;
+	double m_baseRadius, m_height;
 };

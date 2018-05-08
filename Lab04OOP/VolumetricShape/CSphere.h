@@ -11,5 +11,5 @@ public:
 	double GetMass() const;
 	void GetInfo() const;
 private:
-	double m_radius = 0;
+	double m_radius;
 };

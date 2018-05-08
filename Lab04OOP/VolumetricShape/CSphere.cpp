@@ -2,7 +2,7 @@
 #include "CSphere.h"
 
 CSphere::CSphere(double radius, double density) : 
-	CBody("Sphere", density), 
+	CBody("Sphere", density),
 	m_radius(radius)
 {
 }
@@ -29,7 +29,7 @@ double CSphere::GetMass() const
 
 void CSphere::GetInfo() const
 {
-	std::cout << CBody::ToString() << std::endl;
+	std::cout << ToString() << std::endl;
 	std::cout << "Radius: " << GetRadius() << std::endl;
 	std::cout << std::endl;
 }

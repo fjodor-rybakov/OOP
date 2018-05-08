@@ -13,5 +13,5 @@ public:
 	double GetMass() const;
 	void GetInfo() const;
 private:
-	double m_width = 0, m_height = 0, m_depth = 0;
+	double m_width, m_height, m_depth;
 };
