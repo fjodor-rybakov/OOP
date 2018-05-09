@@ -15,12 +15,12 @@ double CCylinder::GetDensity() const
 
 double CCylinder::GetVolume() const
 {
-	return M_PI * pow(m_baseRadius, 2) * m_height;
+	return round(M_PI * pow(m_baseRadius, 2) * m_height * 1000) / 1000;
 }
 
 double CCylinder::GetMass() const
 {
-	return CBody::GetMass();
+	return round(CBody::GetMass() * 1000) / 1000;
 }
 
 double CCylinder::GetBaseRadius() const

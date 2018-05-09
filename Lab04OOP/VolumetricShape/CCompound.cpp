@@ -47,7 +47,7 @@ double CCompound::GetMass() const
 		mass += elem->GetMass();
 	}
 	
-	return mass;
+	return round(mass * 1000) / 1000;
 }
 
 double CCompound::GetVolume() const
@@ -58,12 +58,12 @@ double CCompound::GetVolume() const
 		volume += elem->GetVolume();
 	}
 
-	return volume;
+	return round(volume * 1000) / 1000;
 }
 
 double CCompound::GetDensity() const
 {
-	return GetMass() / GetVolume();
+	return round(GetMass() / GetVolume() * 1000) / 1000;
 }
 
 bool CCompound::CheckShapes(std::shared_ptr<CBody> child)

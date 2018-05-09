@@ -100,7 +100,7 @@ shared_ptr<CCompound> BodyController::AddCompound()
 	return scompound;
 }
 
-void BodyController::FindBodyMaxMass()
+std::shared_ptr<CBody> BodyController::FindBodyMaxMass()
 {
 	double maxMass = 0;
 	std::shared_ptr<CBody> maxMassElemPtr = nullptr;
@@ -114,17 +114,16 @@ void BodyController::FindBodyMaxMass()
 				maxMassElemPtr = i;
 			}
 		}
-
-		cout << "MaxMass: " << maxMass << endl;
-		cout << "Shape: " << maxMassElemPtr->GetType() << endl;
 	}
 	else
 	{
 		cout << "Not found shapes!" << endl;
 	}
+
+	return maxMassElemPtr;
 }
 
-void BodyController::FindBodyMinMass()
+std::shared_ptr<CBody> BodyController::FindBodyMinMass()
 {
 	double minMass = numeric_limits<double>::has_infinity;
 	std::shared_ptr<CBody> minMassElemPtr = nullptr;
@@ -138,14 +137,13 @@ void BodyController::FindBodyMinMass()
 				minMassElemPtr = i;
 			}
 		}
-
-		cout << "MinMass: " << minMass << endl;
-		cout << "Shape: " << minMassElemPtr->GetType() << endl;
 	}
 	else
 	{
 		cout << "Not found shapes!" << endl;
 	}
+
+	return minMassElemPtr;
 }
 
 void BodyController::AddShape(std::shared_ptr<CBody> elem)

@@ -15,12 +15,12 @@ double CCone::GetDensity() const
 
 double CCone::GetVolume() const
 {
-	return M_PI * pow(m_baseRadius, 2) * m_height * 1 / 3;
+	return round(M_PI * pow(m_baseRadius, 2) * m_height * 1 / 3 * 1000) / 1000;
 }
 
 double CCone::GetMass() const
 {
-	return CBody::GetMass();
+	return round(CBody::GetMass() * 1000) / 1000;
 }
 
 double CCone::GetBaseRadius() const

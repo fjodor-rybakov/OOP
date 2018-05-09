@@ -18,8 +18,8 @@ public:
 	shared_ptr<CCone> AddCone();
 	shared_ptr<CCylinder> AddCylinder();
 	shared_ptr<CCompound> AddCompound();
-	void FindBodyMaxMass();
-	void FindBodyMinMass();
+	shared_ptr<CBody> FindBodyMaxMass();
+	shared_ptr<CBody> FindBodyMinMass();
 	void AddShape(std::shared_ptr<CBody> elem);
 	std::vector<std::shared_ptr<CBody>> GetAllShape() const;
 private:

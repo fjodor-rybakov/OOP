@@ -19,12 +19,12 @@ double CSphere::GetDensity() const
 
 double CSphere::GetVolume() const
 {
-	return 4 / 3 * M_PI * pow(m_radius, 3);
+	return round(4 / 3 * M_PI * pow(m_radius, 3) * 1000) / 1000;
 }
 
 double CSphere::GetMass() const
 {
-	return CBody::GetMass();
+	return round(CBody::GetMass() * 1000) / 1000;
 }
 
 void CSphere::GetInfo() const

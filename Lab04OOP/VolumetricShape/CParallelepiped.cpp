@@ -16,12 +16,12 @@ double CParallelepiped::GetDensity() const
 
 double CParallelepiped::GetVolume() const
 {
-	return m_width * m_height * m_depth;
+	return round(m_width * m_height * m_depth * 1000) / 1000;
 }
 
 double CParallelepiped::GetMass() const
 {
-	return CBody::GetMass();
+	return round(CBody::GetMass() * 1000) / 1000;
 }
 
 double CParallelepiped::GetWidth() const
