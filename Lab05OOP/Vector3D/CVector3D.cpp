@@ -86,6 +86,8 @@ CVector3D const operator*(double scalar, const CVector3D & vector)
 
 CVector3D const CVector3D::operator/(double scalar) const
 {
+	if (scalar == 0)
+		throw new std::invalid_argument("Scalar is 0");
 	return CVector3D(x / scalar, y / scalar, z / scalar);
 }
 
@@ -100,6 +102,8 @@ CVector3D & CVector3D::operator*=(double scalar)
 
 CVector3D & CVector3D::operator/=(double scalar)
 {
+	if (scalar == 0)
+		throw new std::invalid_argument("Scalar is 0");
 	x /= scalar;
 	y /= scalar;
 	z /= scalar;
@@ -109,7 +113,7 @@ CVector3D & CVector3D::operator/=(double scalar)
 
 bool CVector3D::operator==(CVector3D const& other) const
 {
-	return (x == other.x) && (y == other.y) && (z == other.z);
+	return abs(x - other.x) <= DBL_EPSILON && abs(y - other.y) <= DBL_EPSILON && abs(z - other.z) <= DBL_EPSILON;
 }
 
 bool CVector3D::operator!=(CVector3D const& other) const
@@ -143,4 +147,9 @@ double CVector3D::DotProduct(CVector3D const& v1, CVector3D const& v2)
 CVector3D CVector3D::CrossProduct(CVector3D const& v1, CVector3D const& v2)
 {
 	return CVector3D(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.z);
+}
+CVector3D CVector3D::Normalize(CVector3D const& v)
+{
+	double halfLength = round(1 / v.GetLength() * 1000) / 1000;
+	return CVector3D(v.x * halfLength, v.y * halfLength, v.z * halfLength);
 }

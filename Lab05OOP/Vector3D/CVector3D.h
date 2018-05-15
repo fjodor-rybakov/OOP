@@ -74,6 +74,10 @@ public:
 	// Вычисляет результат векторного произведения двух трехмерных векторов
 	static CVector3D CrossProduct(CVector3D const& v1, CVector3D const& v2);
 
+	// Нормализует вектор через параметр
+	static CVector3D Normalize(CVector3D const& v);
+	
 	// В данном случае данные можно сделать публичными
 	double x, y, z;
+
 };
