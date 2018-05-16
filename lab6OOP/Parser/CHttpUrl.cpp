@@ -20,27 +20,37 @@ CHttpUrl::CHttpUrl(std::string const& url)
 	{
 		throw CUrlParsingError("Incorrect URL");
 	}
-
 	m_protocol = CheckProtocol(result[1]);
 	m_domain = CheckDomain(result[2]);
 	m_port = CheckPort(result[3]);
 	m_document = CheckDocument(result[4]);
 }
 
-/*CHttpUrl::CHttpUrl(
+CHttpUrl::CHttpUrl(
 	std::string const& domain,
 	std::string const& document,
 	Protocol protocol = HTTP)
+	: m_protocol(protocol),
+	m_domain(CheckDomain(domain)),
+	m_port(protocol),
+	m_document(CheckDocument(document))
 {
-
-}*/
+	SetUrl();
+}
 
 CHttpUrl::CHttpUrl(std::string const& domain,
 	std::string const& document,
 	Protocol protocol,
 	unsigned short port)
+	: m_protocol(protocol),
+	m_domain(CheckDomain(domain)),
+	m_document(CheckDocument(document))
 {
+	if (port < 1)
+		throw CUrlParsingError("Incorrect port");
 
+	m_port = port;
+	SetUrl();
 }
 
 std::string CHttpUrl::GetURL() const
@@ -85,9 +95,14 @@ Protocol CHttpUrl::CheckProtocol(std::string protocol) const
 	throw CUrlParsingError("Incorrect protocol");
 }
 
+std::string CHttpUrl::GetStrProtocol()
+{
+	return m_protocol == HTTP ? "http" : "https";
+}
+
 std::string CHttpUrl::CheckDomain(std::string domain) const
 {
-	regex regex(R"(^([\w.]+)$)");
+	regex regex(R"(^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,31}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$)", std::regex_constants::icase);
 	smatch result;
 
 	if (!regex_match(domain, result, regex))
@@ -102,6 +117,10 @@ unsigned short CHttpUrl::CheckPort(std::string port) const
 {
 	try
 	{
+		if (port.empty())
+		{
+			return m_protocol == HTTP ? HTTP : HTTPS;
+		}
 		unsigned short port_num = stoi(port);
 
 		if (port_num <= 1 && port_num >= USHRT_MAX)
@@ -130,5 +149,13 @@ std::string CHttpUrl::CheckDocument(std::string document) const
 		doc = document;
 	}
 
-	return document;
+	return doc;
+}
+
+void CHttpUrl::SetUrl()
+{
+	m_url = GetStrProtocol();
+	m_url += "://" + m_domain;
+	m_url += static_cast<unsigned short>(m_protocol) == m_port ? "" : ":" + to_string(m_port);
+	m_url += m_document;
 }

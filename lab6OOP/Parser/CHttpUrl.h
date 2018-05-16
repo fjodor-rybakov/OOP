@@ -19,10 +19,10 @@ public:
 	std::invalid_argument
 	Если имя документа не начинается с символа /, то добавляет / к имени документа
 	*/
-	/*CHttpUrl(
+	CHttpUrl(
 		std::string const& domain,
 		std::string const& document,
-		Protocol protocol = HTTP);*/
+		Protocol protocol);
 
 	/* инициализирует URL на основе переданных параметров.
 	При недопустимости входных параметров выбрасывает исключение
@@ -56,6 +56,9 @@ public:
 	// возвращает номер порта
 	unsigned short GetPort() const;
 
+	// Получение протокола в виде строки 
+	std::string GetStrProtocol();
+private:
 	// Проверка на корректность протокола
 	Protocol CheckProtocol(std::string protocol) const;
 
@@ -64,10 +67,13 @@ public:
 
 	// Проверка на корректность порта
 	unsigned short CheckPort(std::string port) const;
-	
+
 	// Проверка на корректность документа
 	std::string CheckDocument(std::string document) const;
-private:
+
+	// Устанавливает URL
+	void SetUrl();
+
 	std::string m_url, m_domain, m_document;
 	unsigned short m_port;
 	Protocol m_protocol;
